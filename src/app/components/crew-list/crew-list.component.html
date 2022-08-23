@@ -1,0 +1,23 @@
+<mat-grid-list cols="4">
+  <mat-grid-tile style="background-color: pink" *ngFor="let crew of crews">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <button><mat-icon fontIcon="person">
+          </mat-icon>
+          <p>{{ crew.firstName }} {{ crew.lastName }}</p>
+        </button>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Nationality: {{ crew.nationality }}</p>
+        <p>Title: {{ crew.title }}</p>
+        <p>Days On Board: {{ crew.daysOnBoard }} </p>
+        <p>Days On Board: {{ crew.dailyRate }} </p>
+        <p>Currency: {{ crew.currency }}</p>
+        <button mat-raised-button color="primary">Edit</button>
+        <button mat-raised-button color="warn">Delete</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

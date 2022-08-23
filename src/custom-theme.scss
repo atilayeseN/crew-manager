@@ -25,7 +25,7 @@ $crew-manager-theme: mat.define-light-theme((
     primary: $crew-manager-primary,
     accent: $crew-manager-accent,
     warn: $crew-manager-warn,
-  )
+  ),
 ));
 
 // Include theme styles for core and each component used in your app.
