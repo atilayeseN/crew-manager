@@ -13,7 +13,7 @@
         <p>Nationality: {{ crew.nationality }}</p>
         <p>Title: {{ crew.title }}</p>
         <p>Days On Board: {{ crew.daysOnBoard }} </p>
-        <p>Days On Board: {{ crew.dailyRate }} </p>
+        <p>Daily Rate: {{ crew.dailyRate }} </p>
         <p>Currency: {{ crew.currency }}</p>
         <button mat-raised-button color="primary">Edit</button>
         <button mat-raised-button color="warn">Delete</button>
@@ -21,3 +21,4 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+<button class="add-button" (click)="openAddCrewDialog()" mat-raised-button color="primary">Add Crew</button>
