@@ -1,11 +1,11 @@
-export interface Crew {
-  id: number;
-  firstName: string;
-  lastName: string;
-  nationality: string;
-  title: string;
-  certificates: string[];
-  daysOnBoard: number;
-  dailyRate: number;
-  currency: string;
+export class Crew {
+  public id: number;
+  public firstName: string;
+  public lastName: string;
+  public nationality: string;
+  public title: string;
+  public certificates: string[];
+  public daysOnBoard: number;
+  public dailyRate: number;
+  public currency: string;
 }

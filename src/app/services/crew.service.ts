@@ -15,8 +15,8 @@ export class CrewService {
     return of(crews);
   }
 
-  save(crew : Crew) {
-    if (crew.id === null) {
+  addCrew(crew : Crew) {
+    if (crew.id === NaN) {
       crew.id = idGenerate(crews);
     }
     else {
@@ -25,7 +25,7 @@ export class CrewService {
       })
 
       crews[index] = crew;
-      
+
     }
   }
 }

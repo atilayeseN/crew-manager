@@ -1,6 +1,6 @@
-<mat-grid-list cols="4">
-  <mat-grid-tile style="background-color: pink" *ngFor="let crew of crews">
-    <mat-card>
+<mat-grid-list cols="2">
+  <mat-grid-tile style="background-color: #bc4558; border-radius: 10px;" *ngFor="let crew of crews">
+    <mat-card style="padding: 15%">
       <mat-card-header>
         <mat-card-title>
           <button><mat-icon fontIcon="person">
@@ -15,10 +15,14 @@
         <p>Days On Board: {{ crew.daysOnBoard }} </p>
         <p>Daily Rate: {{ crew.dailyRate }} </p>
         <p>Currency: {{ crew.currency }}</p>
+        <p>Total Income: {{ totalIncome(crew.dailyRate,crew.daysOnBoard,crew.currency) }}</p>
         <button mat-raised-button color="primary">Edit</button>
         <button mat-raised-button color="warn">Delete</button>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+
+<h1>Total Incomes: {{ allIncomesByCurrency() }}</h1>
+
 <button class="add-button" (click)="openAddCrewDialog()" mat-raised-button color="primary">Add Crew</button>

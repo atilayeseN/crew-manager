@@ -20,9 +20,30 @@ export class CrewListComponent implements OnInit {
     this.crewService.getCrews().subscribe (crews => this.crews = crews);
   }
 
+  totalIncome(dailyRate:number,daysOnBoard:number,currency:string):string {
+    return (dailyRate * daysOnBoard) + currency;
+  }
+
+  allIncomesByCurrency():string {
+    let dollarSum:number = 0;
+    let euroSum:number = 0;
+
+    this.crews.forEach((e) => {
+      if (e.currency === "$") {
+        dollarSum = dollarSum + (e.dailyRate * e.daysOnBoard);
+      }
+      else {
+        euroSum = euroSum + (e.dailyRate * e.daysOnBoard);
+      }
+    })
+
+    return "$: " + dollarSum + " € " + euroSum
+  }
+
   openAddCrewDialog(): void {
     const dialogRef = this.dialog.open(AddCrewComponent, {
-      width: '500px'
+      width: '600px',
+      height: '500px'
     })
 
     dialogRef.afterClosed().subscribe(result => {
