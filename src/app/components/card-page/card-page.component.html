@@ -1,0 +1,19 @@
+
+<div *ngIf="crew">
+  <mat-card>
+    <mat-card-title>{{ crew.firstName }} {{ crew.lastName }}</mat-card-title>
+    <mat-card-content>
+      <p>Nationality: {{ crew.nationality }}</p>
+      <p>Title: {{ crew.title }}</p>
+      <p>Certificates:</p>
+      <app-certificates [certificates] = "crew.certificates"></app-certificates>
+      <p>Days On Board: {{ crew.daysOnBoard }}</p>
+      <p>Dailty Rate: {{ crew.dailyRate }}</p>
+      <p>Currency: {{ crew.currency }}</p>
+      <p>Total Income {{ (crew.dailyRate * crew.daysOnBoard) + crew.currency }}</p>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+

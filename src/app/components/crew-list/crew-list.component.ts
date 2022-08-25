@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CrewService } from 'src/app/services/crew.service';
 import { Crew } from 'src/app/models/crew';
 import { MatDialog } from '@angular/material/dialog';
-import { AddCrewComponent } from './add-crew/add-crew.component';
-import { EditPageComponent } from './edit-page/edit-page.component';
+import { AddCrewComponent } from '../add-crew/add-crew.component';
+import { EditPageComponent } from '../edit-page/edit-page.component';
 
 @Component({
   selector: 'app-crew-list',
@@ -52,7 +52,7 @@ export class CrewListComponent implements OnInit {
       data: crew
     })
     dialogRef.afterClosed().subscribe(result => {
-      
+
     });
   }
 

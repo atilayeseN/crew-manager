@@ -9,13 +9,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import { AddCrewComponent } from './components/crew-list/add-crew/add-crew.component';
+import { AddCrewComponent } from './components/add-crew/add-crew.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from "@angular/material/chips"
 import { MatSelectModule } from "@angular/material/select";
 import { CertificatesComponent } from './components/certificates/certificates.component';
-import { EditPageComponent } from './components/crew-list/edit-page/edit-page.component'
+import { EditPageComponent } from './components/edit-page/edit-page.component';
+import { CardPageComponent } from './components/card-page/card-page.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EditPageComponent } from './components/crew-list/edit-page/edit-page.co
     CrewListComponent,
     AddCrewComponent,
     CertificatesComponent,
-    EditPageComponent
+    EditPageComponent,
+    CardPageComponent
   ],
   imports: [
     BrowserModule,

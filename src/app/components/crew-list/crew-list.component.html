@@ -3,7 +3,7 @@
     <mat-card style="padding: 15%">
       <mat-card-header>
         <mat-card-title>
-          <button><mat-icon fontIcon="person">
+          <button [routerLink]="['/card',crew.id]"><mat-icon fontIcon="person">
           </mat-icon>
           <p>{{ crew.firstName }} {{ crew.lastName }}</p>
         </button>
