@@ -1,6 +1,32 @@
 <h1 mat-dialog-title>AddCrew</h1>
 <div mat-dialog-content>
+  <form>
+
+    <input type="text" [(ngModel)]="crew.firstName" name="firstname" placeholder="First Name">
+    <input type="text" [(ngModel)]="crew.lastName" name="lastname" placeholder="Last Name">
+    <input type="text" [(ngModel)]="crew.nationality" name="nationality" placeholder="Nationality">
+    <input type="text" [(ngModel)]="crew.title" name="title" placeholder="Title">
+    <input type="number" [(ngModel)]="crew.daysOnBoard" name="daysonboard" placeholder="Days On Board">
+    <input type="number" [(ngModel)]="crew.dailyRate" name="dailyrate" placeholder="Daily Rate">
+    <div class="certificate-section">
+      <input type="text" [(ngModel)]="certificate" required name="lastname" placeholder="Sertificate">
+      <button (click)="addCertificate()">Add certificate</button>
+    </div>
+
+    <mat-chip-list #chipList cdkDropList cdkDropListOrientation="horizontal" >
+      <mat-chip *ngFor="let certificate of crew.certificates" (removed)="remove(certificate)">{{ certificate }} <button matChipRemove><mat-icon>cancel</mat-icon></button></mat-chip>
+    </mat-chip-list>
+
+    <mat-select class="currency" [(value)]="crew.currency" placeholder="Currency">
+      <mat-option value="$">$</mat-option>
+      <mat-option value="€">€</mat-option>
+    </mat-select>
+
+
+
+  </form>
+
 </div>
 <div mat-dialog-actions>
-  <button mat-button>Add Crew</button>
+  <button mat-raised-button color="primary" (click)="save()" [mat-dialog-close]="crew">Save</button>
 </div>

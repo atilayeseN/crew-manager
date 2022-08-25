@@ -40,6 +40,10 @@ export class CrewListComponent implements OnInit {
     return "$: " + dollarSum + " € " + euroSum
   }
 
+  addNewCrewToList(crew:Crew): void {
+    this.crews.push(crew)
+  }
+
   openAddCrewDialog(): void {
     const dialogRef = this.dialog.open(AddCrewComponent, {
       width: '600px',
@@ -47,8 +51,7 @@ export class CrewListComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
+      this.crews.push(result);
 
     });
   }

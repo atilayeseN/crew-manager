@@ -15,9 +15,13 @@ export class CrewService {
     return of(crews);
   }
 
-  addCrew(crew : Crew) {
+  addCrew(crew : Crew): Observable<Crew> {
     if (crew.id === NaN) {
       crew.id = idGenerate(crews);
+
+      crews.push(crew);
+
+      return of(crew)
     }
     else {
       const index = crews.findIndex(e => {
@@ -25,6 +29,8 @@ export class CrewService {
       })
 
       crews[index] = crew;
+
+      return of(crew);
 
     }
   }

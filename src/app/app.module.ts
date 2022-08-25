@@ -11,7 +11,9 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { AddCrewComponent } from './components/add-crew/add-crew.component';
 import { MatDialogModule } from "@angular/material/dialog";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule } from '@angular/forms';
+import { MatChipsModule } from "@angular/material/chips"
+import { MatSelectModule } from "@angular/material/select"
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
-    MatFormFieldModule
+    FormsModule,
+    MatChipsModule,
+    MatSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
