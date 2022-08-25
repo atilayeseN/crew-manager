@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CrewService } from 'src/app/services/crew.service';
 import { Crew } from 'src/app/models/crew';
 import { MatDialog } from '@angular/material/dialog';
-import { AddCrewComponent } from '../add-crew/add-crew.component';
+import { AddCrewComponent } from './add-crew/add-crew.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
 
 @Component({
   selector: 'app-crew-list',
@@ -42,6 +43,17 @@ export class CrewListComponent implements OnInit {
 
   addNewCrewToList(crew:Crew): void {
     this.crews.push(crew)
+  }
+
+  openEditCrewDialog(crew:Crew): void {
+    const dialogRef = this.dialog.open(EditPageComponent, {
+      width: '600px',
+      height: '500px',
+      data: crew
+    })
+    dialogRef.afterClosed().subscribe(result => {
+      
+    });
   }
 
   openAddCrewDialog(): void {

@@ -29,6 +29,8 @@ export class AddCrewComponent implements OnInit {
       }
     }
 
+    this.certificate = "";
+
   }
 
   remove(certificate:string):void {
