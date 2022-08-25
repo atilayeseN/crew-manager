@@ -16,13 +16,11 @@ export class CrewService {
   }
 
   getCrewById(id: number): Observable<Crew|undefined> {
-    console.log(id);
-
     return of(crews.find(e => e.id === id));
   }
 
   addCrew(crew : Crew): Observable<Crew> {
-    if (crew.id === NaN) {
+    if (!crew.id) {
       crew.id = idGenerate(crews);
 
       crews.push(crew);

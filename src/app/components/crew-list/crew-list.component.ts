@@ -61,11 +61,6 @@ export class CrewListComponent implements OnInit {
       width: '600px',
       height: '500px'
     })
-
-    dialogRef.afterClosed().subscribe(result => {
-      this.crews.push(result);
-
-    });
   }
 
 }
