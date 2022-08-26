@@ -58,7 +58,7 @@ export class CrewListComponent implements OnInit {
 
   openAddCrewDialog(): void {
     const dialogRef = this.dialog.open(AddCrewComponent, {
-      width: '600px',
+      width: '400px',
       height: '500px'
     })
   }

@@ -5,26 +5,37 @@
     <input matInput type="text" [(ngModel)]="crew.firstName" name="firstname" placeholder="{{'first-name'|translate}}">
   </mat-form-field>
   <mat-form-field>
-    
+    <input matInput type="text" [(ngModel)]="crew.lastName" name="lastname" placeholder="{{'last-name'|translate}}">
   </mat-form-field>
-    <input type="text" [(ngModel)]="crew.lastName" name="lastname" placeholder="{{'last-name'|translate}}">
-    <input type="text" [(ngModel)]="crew.nationality" name="nationality" placeholder="{{'nationality'|translate}}">
-    <input type="text" [(ngModel)]="crew.title" name="title" placeholder="{{'title'|translate}}">
-    <input type="number" [(ngModel)]="crew.daysOnBoard" name="daysonboard" placeholder="{{'days-on-board'|translate}}">
-    <input type="number" [(ngModel)]="crew.dailyRate" name="dailyrate" placeholder="{{'daily-rate'|translate}}">
-    <div class="certificate-section">
-      <input type="text" [(ngModel)]="certificate" required name="certificate" placeholder="{{'certificate'|translate}}">
-      <button (click)="addCertificate()">{{'add-certificate'|translate}}</button>
-    </div>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="crew.nationality" name="nationality" placeholder="{{'nationality'|translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="crew.title" name="title" placeholder="{{'title'|translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="crew.daysOnBoard" name="daysonboard" placeholder="{{'days-on-board'|translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="crew.dailyRate" name="dailyrate" placeholder="{{'daily-rate'|translate}}">
+  </mat-form-field>
 
-    <mat-chip-list #chipList cdkDropList cdkDropListOrientation="horizontal" >
-      <mat-chip *ngFor="let certificate of crew.certificates" (removed)="remove(certificate)">{{ certificate }} <button matChipRemove><mat-icon>cancel</mat-icon></button></mat-chip>
-    </mat-chip-list>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="certificate" name="certificate" placeholder="{{'certificate'|translate}}">
 
+
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="add-certificate" (click)="addCertificate()">{{'add-certificate'|translate}}</button>
+  <mat-chip-list #chipList cdkDropList cdkDropListOrientation="horizontal" >
+    <mat-chip *ngFor="let certificate of crew.certificates" (removed)="remove(certificate)">{{ certificate }} <button matChipRemove><mat-icon>cancel</mat-icon></button></mat-chip>
+  </mat-chip-list>
+  <mat-form-field>
     <mat-select class="currency" [(value)]="crew.currency" placeholder="{{'currency'|translate}}">
       <mat-option value="$">$</mat-option>
       <mat-option value="€">€</mat-option>
     </mat-select>
+  </mat-form-field>
+
 
     <div mat-dialog-actions>
       <button type="submit" mat-raised-button color="primary" (click)="save()" [mat-dialog-close]="crew">{{'save'|translate}}</button>

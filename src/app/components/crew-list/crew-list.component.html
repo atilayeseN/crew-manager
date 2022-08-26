@@ -1,15 +1,12 @@
-<mat-grid-list cols="2">
+<mat-grid-list cols="3">
   <mat-grid-tile style="background-color: #bc4558; border-radius: 10px;" *ngFor="let crew of crews">
-    <mat-card style="padding: 15%">
+    <mat-card>
       <mat-card-header>
-        <mat-card-title>
-          <button [routerLink]="['/card',crew.id]"><mat-icon fontIcon="person">
-          </mat-icon>
-          <p>{{ crew.firstName }} {{ crew.lastName }}</p>
-        </button>
-        </mat-card-title>
+        <mat-card-title>{{ crew.firstName }} {{ crew.lastName }}</mat-card-title>
+        <button mat-fab [routerLink]="['/card',crew.id]"><mat-icon>person</mat-icon></button>
       </mat-card-header>
       <mat-card-content>
+        <h1></h1>
         <p>{{'nationality'|translate}}: {{ crew.nationality }}</p>
         <p>{{'title'|translate}}: {{ crew.title }}</p>
         <p>{{'days-on-board'|translate}}: {{ crew.daysOnBoard }} </p>
