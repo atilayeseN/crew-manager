@@ -10,19 +10,19 @@
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>Nationality: {{ crew.nationality }}</p>
-        <p>Title: {{ crew.title }}</p>
-        <p>Days On Board: {{ crew.daysOnBoard }} </p>
-        <p>Daily Rate: {{ crew.dailyRate }} </p>
-        <p>Currency: {{ crew.currency }}</p>
-        <p>Total Income: {{ totalIncome(crew.dailyRate,crew.daysOnBoard,crew.currency) }}</p>
-        <button (click)="openEditCrewDialog(crew)" mat-raised-button color="primary">Edit</button>
-        <button (click)="deletCrew(crew)" mat-raised-button color="warn">Delete</button>
+        <p>{{'nationality'|translate}}: {{ crew.nationality }}</p>
+        <p>{{'title'|translate}}: {{ crew.title }}</p>
+        <p>{{'days-on-board'|translate}}: {{ crew.daysOnBoard }} </p>
+        <p>{{'daily-rate'|translate}}: {{ crew.dailyRate }} </p>
+        <p>{{'currency'|translate}}: {{ crew.currency }}</p>
+        <p>{{'total-income'|translate}}: {{ totalIncome(crew.dailyRate,crew.daysOnBoard,crew.currency) }}</p>
+        <button (click)="openEditCrewDialog(crew)" mat-raised-button color="primary">{{'edit'|translate}}</button>
+        <button (click)="deletCrew(crew)" mat-raised-button color="warn">{{'delete'|translate}}</button>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
-<h1>Total Incomes: {{ allIncomesByCurrency() }}</h1>
+<h1>{{'total-incomes'|translate}}: {{ allIncomesByCurrency() }}</h1>
 
-<button class="add-button" (click)="openAddCrewDialog()" mat-raised-button color="primary">Add Crew</button>
+<button class="add-button" (click)="openAddCrewDialog()" mat-raised-button color="primary">{{'add-crew'|translate}}</button>

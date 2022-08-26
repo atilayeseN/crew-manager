@@ -1,32 +1,35 @@
 <h1 mat-dialog-title>AddCrew</h1>
 <div mat-dialog-content>
   <form>
-
-    <input type="text" [(ngModel)]="crew.firstName" name="firstname" placeholder="First Name">
-    <input type="text" [(ngModel)]="crew.lastName" name="lastname" placeholder="Last Name">
-    <input type="text" [(ngModel)]="crew.nationality" name="nationality" placeholder="Nationality">
-    <input type="text" [(ngModel)]="crew.title" name="title" placeholder="Title">
-    <input type="number" [(ngModel)]="crew.daysOnBoard" name="daysonboard" placeholder="Days On Board">
-    <input type="number" [(ngModel)]="crew.dailyRate" name="dailyrate" placeholder="Daily Rate">
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="crew.firstName" name="firstname" placeholder="{{'first-name'|translate}}">
+  </mat-form-field>
+  <mat-form-field>
+    
+  </mat-form-field>
+    <input type="text" [(ngModel)]="crew.lastName" name="lastname" placeholder="{{'last-name'|translate}}">
+    <input type="text" [(ngModel)]="crew.nationality" name="nationality" placeholder="{{'nationality'|translate}}">
+    <input type="text" [(ngModel)]="crew.title" name="title" placeholder="{{'title'|translate}}">
+    <input type="number" [(ngModel)]="crew.daysOnBoard" name="daysonboard" placeholder="{{'days-on-board'|translate}}">
+    <input type="number" [(ngModel)]="crew.dailyRate" name="dailyrate" placeholder="{{'daily-rate'|translate}}">
     <div class="certificate-section">
-      <input type="text" [(ngModel)]="certificate" required name="lastname" placeholder="Sertificate">
-      <button (click)="addCertificate()">Add certificate</button>
+      <input type="text" [(ngModel)]="certificate" required name="certificate" placeholder="{{'certificate'|translate}}">
+      <button (click)="addCertificate()">{{'add-certificate'|translate}}</button>
     </div>
 
     <mat-chip-list #chipList cdkDropList cdkDropListOrientation="horizontal" >
       <mat-chip *ngFor="let certificate of crew.certificates" (removed)="remove(certificate)">{{ certificate }} <button matChipRemove><mat-icon>cancel</mat-icon></button></mat-chip>
     </mat-chip-list>
 
-    <mat-select class="currency" [(value)]="crew.currency" placeholder="Currency">
+    <mat-select class="currency" [(value)]="crew.currency" placeholder="{{'currency'|translate}}">
       <mat-option value="$">$</mat-option>
       <mat-option value="€">€</mat-option>
     </mat-select>
 
-
-
+    <div mat-dialog-actions>
+      <button type="submit" mat-raised-button color="primary" (click)="save()" [mat-dialog-close]="crew">{{'save'|translate}}</button>
+    </div>
   </form>
 
 </div>
-<div mat-dialog-actions>
-  <button mat-raised-button color="primary" (click)="save()" [mat-dialog-close]="crew">Save</button>
-</div>
+

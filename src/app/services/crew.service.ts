@@ -20,11 +20,14 @@ export class CrewService {
   }
 
   addCrew(crew : Crew): Observable<Crew> {
+    if (Object.values(crew).length !== 0) {
       crew.id = idGenerate(crews);
 
       crews.push(crew);
 
       return of(crew)
+    }
+    return of()
   }
 
   deleteCrew(crew: Crew): Observable<Crew>{

@@ -16,7 +16,13 @@ import { MatChipsModule } from "@angular/material/chips"
 import { MatSelectModule } from "@angular/material/select";
 import { CertificatesComponent } from './components/certificates/certificates.component';
 import { EditPageComponent } from './components/edit-page/edit-page.component';
-import { CardPageComponent } from './components/card-page/card-page.component'
+import { CardPageComponent } from './components/card-page/card-page.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LanguageBarComponent } from './components/language-bar/language-bar.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,8 @@ import { CardPageComponent } from './components/card-page/card-page.component'
     AddCrewComponent,
     CertificatesComponent,
     EditPageComponent,
-    CardPageComponent
+    CardPageComponent,
+    LanguageBarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,12 +43,26 @@ import { CardPageComponent } from './components/card-page/card-page.component'
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
     FormsModule,
     MatChipsModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

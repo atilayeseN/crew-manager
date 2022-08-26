@@ -1,0 +1,17 @@
+{
+  "first-name":"Primeiro nome",
+  "last-name":"Sobrenome",
+  "nationality":"Nacionalidade",
+  "title": "Título",
+  "days-on-board": "Dias a bordo",
+  "daily-rate": "Diária",
+  "certificate": "Certificado",
+  "currency": "Moeda",
+  "total-income": "Renda total",
+  "total-incomes": "Rendimentos Totais",
+  "add-crew": "Adicionar tripulação",
+  "edit": "Editar",
+  "delete": "Excluir",
+  "add-certificate": "Adicionar Certificado",
+  "save": "Salve"
+}

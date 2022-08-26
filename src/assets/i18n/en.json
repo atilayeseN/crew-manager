@@ -1,0 +1,17 @@
+{
+  "first-name":"First Name",
+  "last-name":"Last Name",
+  "nationality":"Nationality",
+  "title": "Title",
+  "days-on-board": "Days on board",
+  "daily-rate": "Daily rate",
+  "certificate": "Certificate",
+  "currency": "Currency",
+  "total-income": "Total Income",
+  "total-incomes": "Total Incomes",
+  "add-crew": "Add Crew",
+  "add-certificate": "Add Certificate",
+  "edit": "Edit",
+  "delete": "Delete",
+  "save": "Save"
+}

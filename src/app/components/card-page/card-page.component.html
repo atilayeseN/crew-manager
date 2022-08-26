@@ -3,14 +3,14 @@
   <mat-card>
     <mat-card-title>{{ crew.firstName }} {{ crew.lastName }}</mat-card-title>
     <mat-card-content>
-      <p>Nationality: {{ crew.nationality }}</p>
-      <p>Title: {{ crew.title }}</p>
-      <p>Certificates:</p>
+      <p>{{'nationality'|translate}}: {{ crew.nationality }}</p>
+      <p>{{'title'|translate}}: {{ crew.title }}</p>
+      <p>{{'certificate'|translate}}:</p>
       <app-certificates [certificates] = "crew.certificates"></app-certificates>
-      <p>Days On Board: {{ crew.daysOnBoard }}</p>
-      <p>Dailty Rate: {{ crew.dailyRate }}</p>
-      <p>Currency: {{ crew.currency }}</p>
-      <p>Total Income {{ (crew.dailyRate * crew.daysOnBoard) + crew.currency }}</p>
+      <p>{{'days-on-board'|translate}}: {{ crew.daysOnBoard }}</p>
+      <p>{{'daily-rate'|translate}}: {{ crew.dailyRate }}</p>
+      <p>{{'currency'|translate}}: {{ crew.currency }}</p>
+      <p>{{'total-income'|translate}}: {{ (crew.dailyRate * crew.daysOnBoard) + crew.currency }}</p>
     </mat-card-content>
   </mat-card>
 
