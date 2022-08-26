@@ -20,22 +20,20 @@ export class CrewService {
   }
 
   addCrew(crew : Crew): Observable<Crew> {
-    if (!crew.id) {
       crew.id = idGenerate(crews);
 
       crews.push(crew);
 
       return of(crew)
-    }
-    else {
-      const index = crews.findIndex(e => {
-        return crew.id === e.id
-      })
+  }
 
-      crews[index] = crew;
+  deleteCrew(crew: Crew): Observable<Crew>{
+    const index = crews.indexOf(crew)
+    if (index !== -1) {
+      crews.splice(index, 1);
 
       return of(crew);
-
     }
+    return of();
   }
 }

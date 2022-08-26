@@ -17,7 +17,7 @@
         <p>Currency: {{ crew.currency }}</p>
         <p>Total Income: {{ totalIncome(crew.dailyRate,crew.daysOnBoard,crew.currency) }}</p>
         <button (click)="openEditCrewDialog(crew)" mat-raised-button color="primary">Edit</button>
-        <button mat-raised-button color="warn">Delete</button>
+        <button (click)="deletCrew(crew)" mat-raised-button color="warn">Delete</button>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>

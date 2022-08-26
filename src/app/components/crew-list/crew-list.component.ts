@@ -63,4 +63,8 @@ export class CrewListComponent implements OnInit {
     })
   }
 
+  deletCrew(crew: Crew): void {
+    this.crewService.deleteCrew(crew).subscribe(e => alert(e.firstName + " succesfully deleted"));
+  }
+
 }
